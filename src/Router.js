@@ -11,7 +11,12 @@ const RouterComponent = () => {
       </Scene>
 
       <Scene key="main">
-        <Scene key="employeeList" component={EmployeeList} title="Employees" />
+        <Scene
+          rightTitle="Add"
+          onRight={() => alert('Right!')}
+          key="employeeList"
+          component={EmployeeList}
+          title="Employees" />
       </Scene>
     </Router>
   );
