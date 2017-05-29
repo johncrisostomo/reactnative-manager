@@ -44,6 +44,12 @@ class EmployeeEdit extends Component {
             Text Schedule
           </Button>
         </CardSection>
+
+        <CardSection>
+          <Button>
+            Fire
+          </Button>
+        </CardSection>
       </Card>
     );
   }
