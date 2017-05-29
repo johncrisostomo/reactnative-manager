@@ -40,7 +40,7 @@ export const employeeSave = ({ name, phone, shift, uid }) => {
   };
 }
 
-export const employeeDelete = ({ uid }) {
+export const employeeDelete = ({ uid }) => {
   const { currentUser } = firebase.auth();
 
   return () => {
