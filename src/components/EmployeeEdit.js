@@ -36,6 +36,18 @@ class EmployeeEdit extends Component {
     Communications.text(phone, `Your upcoming shift is on ${shift}`);
   }
 
+  toggleModal() {
+    this.setState({ showModal: !this.state.showModal });
+  }
+
+  onAccept() {
+
+  }
+
+  onDecline() {
+    this.setState({ showModal: false });
+  }
+
   render() {
     return (
       <Card>
@@ -53,14 +65,16 @@ class EmployeeEdit extends Component {
         </CardSection>
 
         <CardSection>
-          <Button onPress={() => this.setState({
-            showModal: !this.state.showModal })}>
+          <Button onPress={this.toggleModal.bind(this)}>
             Fire Employee
           </Button>
         </CardSection>
 
         <Confirm
-          visible={this.state.showModal}>
+          visible={this.state.showModal}
+          onAccept={this.onAccept.bind(this)}
+          onDecline={this.onDecline.bind(this)}
+          >
           Are you sure you want to delete this?
         </Confirm>
       </Card>
